@@ -16,6 +16,9 @@
     <meta name="description" content="">
 
 	<title>MarketPlace | Home</title>
+    <!-- Esta etiqueta me carga la ruta base para archivos css y js -->
+    <base href="views/" target="">
+
 
 	<link rel="icon" href="img/template/icono.png">
 
