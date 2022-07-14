@@ -1,2 +1,0 @@
-
-USE app_marketplace;
