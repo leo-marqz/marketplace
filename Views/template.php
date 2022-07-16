@@ -2,8 +2,8 @@
 
 ?>
 <?php
-// $url = CurlController::api() . 'products';
-// $totalProducts = CurlController::request($url, 'GET', array(), array());
+$url = CurlController::api() . 'products';
+$totalProducts = CurlController::request($url, 'GET', array(), array());
 // echo "<p><strong>Estado de la peticion:</strong> " . $totalProducts->status . "</p>";
 // echo "<p><strong>Total de resultados:</strong> " . $totalProducts->total . "</p>";
 // echo "<p><strong>Producto #1 nombre</strong> : " . $totalProducts->results[0]->name_product . "</p>";
@@ -154,11 +154,11 @@
     Preload
     ======================================-->
 
-    <div id="loader-wrapper">
+    <!-- <div id="loader-wrapper">
         <img src="img/template/loader.jpg">
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
-    </div>  
+    </div>   -->
 
 	<!--=====================================
 	Header Promotion
