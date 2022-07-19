@@ -67,7 +67,7 @@ Header Content
 
             <div class="header__content-left">
 
-                <!--=====================================
+            <!--=====================================
             Logo
             ======================================-->
 
@@ -75,7 +75,7 @@ Header Content
                     <img src="img/template/logo_light.png" alt="">
                 </a>
 
-                <!--=====================================
+            <!--=====================================
             Menú
             ======================================-->
 
@@ -91,8 +91,10 @@ Header Content
                         <ul class="menu--dropdown">
                             <?php foreach($listOfCategories as $category): ?>
                             <li class="menu-item-has-children has-mega-menu">
-                                <a href="<?=$category->url_category?>"><i class="<?=$category->icon_category?>"></i> <?=$category->name_category?> </a>
-                                
+                                <a href="<?=$category->url_category?>">
+                                    <i class="<?=$category->icon_category?>"></i>
+                                    <?=$category->name_category?>
+                                </a>
                                 <div class="mega-menu">
                                     <?php 
                                         // Titulos
@@ -117,8 +119,6 @@ Header Content
                                             </ul>
                                         </div>
                                     <?php endforeach; ?>
-                                    
-                                
                                     <?php endforeach; ?>
                                 </div>
                             </li>
@@ -131,7 +131,7 @@ Header Content
 
             </div><!-- End Header Content Left-->
 
-            <!--=====================================
+        <!--=====================================
         Search
         ======================================-->
 
@@ -152,10 +152,9 @@ Header Content
             </div>
 
             <div class="header__content-right">
-
                 <div class="header__actions">
 
-                    <!--=====================================
+                <!--=====================================
                 Wishlist
                 ======================================-->
 
@@ -163,10 +162,9 @@ Header Content
                         <i class="icon-heart"></i><span><i>0</i></span>
                     </a>
 
-                    <!--=====================================
+                <!--=====================================
                 Cart
                 ======================================-->
-
                     <div class="ps-cart--mini">
 
                         <a class="header__extra" href="#">
