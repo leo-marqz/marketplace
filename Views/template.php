@@ -24,7 +24,6 @@ $routesArray = array_filter($routesArray);
 if( !empty( array_filter($routesArray)[1] ) )
 {
     $urlParams = explode("&", array_filter($routesArray)[1]);
-    var_dump($urlParams);
 }
 
 if(!empty($urlParams[0]))
