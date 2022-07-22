@@ -2,13 +2,25 @@
 
 ?>
 <?php
+/**
+ * Traemos los productos desde la api marketplace
+ */
 $url = CurlController::api() . 'products';
 $totalProducts = CurlController::request($url, 'GET', array(), array());
-// echo "<p><strong>Estado de la peticion:</strong> " . $totalProducts->status . "</p>";
-// echo "<p><strong>Total de resultados:</strong> " . $totalProducts->total . "</p>";
-// echo "<p><strong>Producto #1 nombre</strong> : " . $totalProducts->results[0]->name_product . "</p>";
-// echo "<p><strong>Producto #1 precio :</strong> " . $totalProducts->results[0]->price_product . "</p>";
-// var_dump($totalProducts);
+
+/**
+ * capturamos las rutas de la URL
+ */
+$routersArray = explode("/", $_SERVER['REQUEST_URI']);
+$routersArray = array_filter($routersArray);
+
+// var_dump($routersArray);
+
+/**
+ * Traer el dominio principal
+ */
+
+ $path = TemplateController::path();
 
 ?>
 

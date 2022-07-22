@@ -26,6 +26,9 @@ $infoTopBanner = json_decode($topBanner[0]->top_banner_product, true);
             </div>
             <div class="ps-block__center">
                 <p><?=$infoTopBanner['P2 tag']?><span><?=$infoTopBanner['Span tag']?></span></p>
-            </div><a class="ps-btn ps-btn--sm" href="#"><?=$infoTopBanner['Button tag']?></a>
+            </div>
+            <a class="ps-btn ps-btn--sm" 
+            href="<?php echo $path . $topBanner[0]->url_product?>">
+            <?=$infoTopBanner['Button tag']?></a>
         </div>
     </div>

@@ -91,7 +91,7 @@ Header Content
                         <ul class="menu--dropdown">
                             <?php foreach($listOfCategories as $category): ?>
                             <li class="menu-item-has-children has-mega-menu">
-                                <a href="<?=$category->url_category?>">
+                                <a href="<?php echo $path . $category->url_category?>">
                                     <i class="<?=$category->icon_category?>"></i>
                                     <?=$category->name_category?>
                                 </a>
@@ -112,7 +112,9 @@ Header Content
                                                     $listOfSubcategories = $response->results;
                                                     foreach($listOfSubcategories as $subcategory):
                                                 ?>
-                                                        <li><a href="<?=$subcategory->url_subcategory?>"> <?=$subcategory->name_subcategory?> </a></li>
+                                                        <li><a href="<?php echo $path . $subcategory->url_subcategory?>">
+                                                         <?=$subcategory->name_subcategory?> 
+                                                        </a></li>
 
                                                         <?php endforeach; ?>
                                                 <!-- ========== End Subcategories ========== -->

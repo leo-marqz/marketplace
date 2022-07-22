@@ -73,7 +73,7 @@
 							foreach($listOfCategories as $category):
 							?>
 								<li class="current-menu-item menu-item-has-children">
-									<a href="<?=$category->url_category?>"> <?=$category->name_category?> </a>
+									<a href="<?php echo $path. $category->url_category?>"> <?=$category->name_category?> </a>
 									<span class="sub-toggle"><i class="fa fa-angle-down"></i>
 								</span>
 									<ul class="sub-menu" style="display: none;">
@@ -85,7 +85,7 @@
 									foreach($listOfSubcategoriesMobile as $subcategoryMobile):
 									?>
 									<li class="current-menu-item ">
-										<a href="<?=$subcategoryMobile->url_subcategory?>">
+										<a href="<?php echo $path . $subcategoryMobile->url_subcategory?>">
 											<?=$subcategoryMobile->name_subcategory?>
 										</a>
 									</li>
@@ -105,7 +105,7 @@
 
 			</div><!-- End menu-->
 
-			<a class="ps-logo pl-3 pl-sm-5" href="index.html">
+			<a class="ps-logo pl-3 pl-sm-5" href="/">
 				<img src="img/template/logo_light.png" class="pt-3" alt="">
 			</a>
 

@@ -10,6 +10,18 @@ class TemplateController
     {
         include('views/template.php');
     }
+    
+    /**--------------------------------------------------------------
+     * Ruta principal de la app
+     * --------------------------------------------------------------
+     */
+
+     public static function path()
+     {
+        return "http://marketplace.com/";
+     }
+
+
 }
 
 ?>

@@ -120,7 +120,7 @@
                 $listOfSubcategoriesFooter = CurlController::request($urlSubCategoriesFooter, 'GET', array(), array())->results;
                 foreach($listOfSubcategoriesFooter as $subcategoryFooter):
             ?>
-            <a href="#"> <?=$subcategoryFooter->name_subcategory?></a>
+            <a href="<?php echo $path . $subcategoryFooter->url_subcategory?>"> <?=$subcategoryFooter->name_subcategory?></a>
             <!-- <a href="#">Audios &amp; Theaters</a>
             <a href="#">Car Electronics</a>
             <a href="#">Office Electronics</a>
