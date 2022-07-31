@@ -1,6 +1,6 @@
 <?php
 
-$randomStartProduct = rand(0, ($totalProducts->total - 1));
+$randomStartProduct = rand(0, ($totalProducts->total - 5));
 
 $urlGetProductsForSlider = CurlController::api() . 
 "relations" .

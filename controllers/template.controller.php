@@ -6,7 +6,7 @@ class TemplateController
      * Traemos la vista de la plantilla principal
      * --------------------------------------------------------------
      */
-    public function index()
+    public function index():void
     {
         include('views/template.php');
     }
@@ -16,7 +16,7 @@ class TemplateController
      * --------------------------------------------------------------
      */
 
-     public static function path()
+     public static function path():string
      {
         return "http://marketplace.com/";
      }
