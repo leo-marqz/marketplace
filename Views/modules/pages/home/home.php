@@ -31,16 +31,16 @@ Home Deal Hot Today
             <div class="row">
 
                 <!--=====================================
-Column Deal Hot
-======================================-->
+                Column Deal Hot
+                ======================================-->
 
                 <?php include 'modules/deal-hot-today.php'; ?>
 
-<!--=====================================
-Column Top 20 Best Seller
-======================================-->
+                <!--=====================================
+                Column Top 20 Best Seller
+                ======================================-->
 
-<?php include 'modules/top-20-best-seller.php'; ?>
+                <?php include 'modules/top-20-best-seller.php'; ?>
             </div>
 
         </div>
@@ -50,67 +50,7 @@ Column Top 20 Best Seller
     <!--=====================================
 Top Categoríes
 ======================================-->
-
-    <div class="ps-top-categories">
-
-        <div class="container">
-
-            <h3>Top categories of the month</h3>
-
-            <div class="row">
-
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 ">
-                    <div class="ps-block--category">
-                        <a class="ps-block__overlay" href="shop-default.html"></a>
-                        <img src="img/categories/1.jpg" alt="">
-                        <p>Electronics</p>
-                    </div>
-                </div>
-
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 ">
-                    <div class="ps-block--category">
-                        <a class="ps-block__overlay" href="shop-default.html"></a>
-                        <img src="img/categories/2.jpg" alt="">
-                        <p>Clothings</p>
-                    </div>
-                </div>
-
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 ">
-                    <div class="ps-block--category">
-                        <a class="ps-block__overlay" href="shop-default.html"></a>
-                        <img src="img/categories/3.jpg" alt="">
-                        <p>Computers</p>
-                    </div>
-                </div>
-
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 ">
-                    <div class="ps-block--category">
-                        <a class="ps-block__overlay" href="shop-default.html"></a>
-                        <img src="img/categories/4.jpg" alt="">
-                        <p>Home &amp; Kitchen</p>
-                    </div>
-                </div>
-
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 ">
-                    <div class="ps-block--category">
-                        <a class="ps-block__overlay" href="shop-default.html"></a>
-                        <img src="img/categories/5.jpg" alt="">
-                        <p>Health &amp; Beauty</p>
-                    </div>
-                </div>
-
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 ">
-                    <div class="ps-block--category">
-                        <a class="ps-block__overlay" href="shop-default.html"></a>
-                        <img src="img/categories/6.jpg" alt="">
-                        <p>Health &amp; Beauty</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div><!-- End Top Categories -->
+<?php include 'modules/top-categories.php'; ?>
 
 </div><!-- End Homepage 6-->
 
