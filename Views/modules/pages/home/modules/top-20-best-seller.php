@@ -55,20 +55,6 @@
                                 <?=$sale->name_product?>
                             </a>
 
-                            <!-- <div class="ps-product__rating">
-
-                                <select class="ps-rating" data-read-only="true">
-                                    <option value="1">1</option>
-                                    <option value="1">2</option>
-                                    <option value="1">3</option>
-                                    <option value="1">4</option>
-                                    <option value="2">5</option>
-                                </select>
-
-                                <span>01</span>
-
-                            </div> -->
-
                             <p class="ps-product__price">
                                 <?php if($sale->offer_product != null): ?>
                                     <p class="ps-product__price sale">

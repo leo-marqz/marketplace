@@ -10,9 +10,9 @@ class HelperController
      * @param int|float $price
      * @param int|float $offer
      * @param string $type [ Discount, Fixed ]
-     * @return float 
+     * @return string 
      */
-    public static function amountSaveOnPurchase(int|float $price, int|float $offer, string $type):float
+    public static function amountSaveOnPurchase(int|float $price, int|float $offer, string $type):string
     {
         $save = 0;
         // Discounted offer
@@ -35,9 +35,9 @@ class HelperController
      * @param int|float $price
      * @param int|float $offer
      * @param string $type [ Discount, Fixed ]
-     * @return float
+     * @return string
      */
-    public static function finalOfferPrice(int|float $price, int|float $offer, string $type):float
+    public static function finalOfferPrice(int|float $price, int|float $offer, string $type):string
     {
         $total = 0.0;
         // Discounted offer
@@ -74,7 +74,29 @@ class HelperController
         
     }
 
+    /**
+     * @param int|float $price
+     * @param int|float $offer
+     * @param string $type [ Discount, Fixed ]
+     * @return float
+     */
+    public static function offerDiscountPercentage(int|float $price, int|float $offer, string $type):float
+    {
+        $discount = 0.0;
+        // Discounted offer
+        if($type == 'Discount')
+        {
+            $discount = $offer;
+        }
 
+        // Fixed price offer
+        if($type == 'Fixed')
+        {
+            $discount = $offer * 100 / $price;
+        }
+        return round($discount, 2);
+    }
+    
 }
 
 ?>
