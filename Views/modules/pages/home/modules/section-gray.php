@@ -92,25 +92,25 @@
 
                         </a>
 
-                            <?php
-                                $strPercent = "";
-                                if(!is_null($productForTopCategory->offer_product))
-                                {
-                                    $offer = json_decode(
-                                        $productForTopCategory->offer_product,
-                                        true
-                                    );
-                                    $strPercent = HelperController::offerDiscountPercentage(
-                                        $productForTopCategory->price_product,
-                                        $offer[1],
-                                        $offer[0]
-                                    );
-                                    echo "<div class='ps-product__badge'>{$strPercent}%</div>";
-                                }else
-                                {
-                                    echo "<div class='ps-product__badge out-stock'>out of stock</div>";
-                                }
-                            ?>
+                        <?php
+                            $strPercent = "";
+                            if(!is_null($productForTopCategory->offer_product))
+                            {
+                                $offer = json_decode(
+                                    $productForTopCategory->offer_product,
+                                    true
+                                );
+                                $strPercent = HelperController::offerDiscountPercentage(
+                                    $productForTopCategory->price_product,
+                                    $offer[1],
+                                    $offer[0]
+                                );
+                                echo "<div class='ps-product__badge'>{$strPercent}%</div>";
+                            }else
+                            {
+                                echo "<div class='ps-product__badge out-stock'>out of stock</div>";
+                            }
+                        ?>
                         
 
                     </div>
