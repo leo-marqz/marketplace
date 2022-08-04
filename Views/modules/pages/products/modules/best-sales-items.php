@@ -41,6 +41,25 @@
                     />
                 </a>
 
+                <?php
+                    $strPercent = "";
+                    if(!is_null($bestSalesItem->offer_product))
+                    {
+                        $offer = json_decode(
+                            $bestSalesItem->offer_product,
+                            true
+                        );
+                        $strPercent = HelperController::offerDiscountPercentage(
+                            $bestSalesItem->price_product,
+                            $offer[1],
+                            $offer[0]
+                        );
+                        echo "<div class='ps-product__badge'>{$strPercent}%</div>";
+                    }else
+                    {
+                        echo "<div class='ps-product__badge out-stock'>out of stock</div>";
+                    }
+                ?>
                     <ul class="ps-product__actions">
                         <!-- *************************************  -->
                         <!-- BTN ACTIONS ************************* -->
@@ -68,12 +87,17 @@
                 </div>
 
                 <div class="ps-product__container">
-
-                    <a class="ps-product__vendor" href="#">Young Shop</a>
+                    <!-- *************************************  -->
+                    <!-- STORE NAME ************************** -->
+                    <!-- *************************************  -->
+                    
+                    <a class="ps-product__vendor" href="<?=$path . $bestSalesItem->url_store?>">
+                        <?=$bestSalesItem->name_store?>
+                    </a>
 
                     <div class="ps-product__content">
 
-                        <a class="ps-product__title" href="product-default.html">
+                        <a class="ps-product__title" href=" <?=$path . $bestSalesItem->url_product?>">
                             <?=$bestSalesItem->name_product?>
                         </a>
 
@@ -117,7 +141,7 @@
                                                 }else{
                                                     echo 0;
                                                 } 
-                                            ?> review
+                                            ?> 
                                         )
                                     </span>
 
@@ -149,10 +173,30 @@
 
                     <div class="ps-product__content hover">
 
-                        <a class="ps-product__title" href="product-default.html">
-                            Sleeve Linen Blend Caro Pane Shirt</a>
+                        <a class="ps-product__title" href="<?=$path . $bestSalesItem->url_product?>">
+                            <?=$bestSalesItem->name_product?>
+                        </a>
 
-                        <p class="ps-product__price">$22.99 - $32.99</p>
+                        <p class="ps-product__price">
+                        <?php
+                            if(!is_null($bestSalesItem->offer_product))
+                            {
+                                $offer = json_decode(
+                                    $bestSalesItem->offer_product,
+                                    true
+                                );
+                                $finalPrice = HelperController::finalOfferPrice(
+                                    $bestSalesItem->price_product,
+                                    $offer[1],
+                                    $offer[0]
+                                );
+                                echo "$". $finalPrice . " <del>$" . $bestSalesItem->price_product . "</del>";
+                            }else
+                            {
+                                echo "$" . $bestSalesItem->price_product;
+                            }
+                        ?>
+                        </p>
 
                     </div>
 
@@ -161,7 +205,7 @@
             </div><!-- End Product -->
             <?php endforeach; ?>
         </div>
-
+ 
     </div>
 
 </div><!-- End Best Sales Items -->
