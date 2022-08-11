@@ -96,6 +96,40 @@ class HelperController
         }
         return round($discount, 2);
     }
+
+    public static function printRating(int $reviews = 0):void
+    {
+        if($reviews >= 1)
+        {
+            for($i=0; $i < 5; $i++){
+                if($reviews < ($i + 1))
+                {
+                    echo '<option value="1">' . ($i + 1) . '</option>';
+                }else{
+                    echo '<option value="2">' . ($i + 1) . '</option>';
+                }
+            }
+        }
+        if($reviews == 0){
+            for($i=0; $i < 5; $i++)
+            {
+                if($i == 0)
+                {
+                    echo '<option value="0">' . ($i + 1) . '</option>'; 
+                }
+                echo '<option value="1">' . ($i + 1) . '</option>'; 
+            }
+        }
+    }
+
+    public static function printNumberReviews(array $arrReviews = []):int
+    {
+        $c = 0;
+        if(!is_null($arrReviews)){
+            $c = count($arrReviews);
+        }
+        return $c;
+    }
     
 }
 

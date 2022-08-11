@@ -74,7 +74,7 @@ Product
             </li>
 
             <li>
-                <a href="#" data-toggle="tooltip" data-placement="top" title="Quick View">
+                <a href="<?=$path . $recommendedItems->url_product?>" data-toggle="tooltip" data-placement="top" title="Quick View">
                     <i class="icon-eye"></i>
                 </a>
             </li>
@@ -164,7 +164,7 @@ Product
                                     $offer[1],
                                     $offer[0]
                                 );
-                                echo "$". $finalPrice . " <del>$" . $recommendedItems->price_product . "</del>";
+                                echo "<P class='ps-product__price sale'>$". $finalPrice . " <del>$" . $recommendedItems->price_product . "</del></p>";
                             }else
                             {
                                 echo "$" . $recommendedItems->price_product;
@@ -193,7 +193,7 @@ Product
                         $offer[1],
                         $offer[0]
                     );
-                    echo "$". $finalPrice . " <del>$" . $recommendedItems->price_product . "</del>";
+                    echo "<P class='ps-product__price sale'>$". $finalPrice . " <del>$" . $recommendedItems->price_product . "</del></p>";
                 }else
                 {
                     echo "$" . $recommendedItems->price_product;
@@ -215,5 +215,5 @@ Product
     </div>
 
 </div>
-
+ 
 </div><!-- End Recommended Items -->
