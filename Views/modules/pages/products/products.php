@@ -1,10 +1,29 @@
 <?php
 
+
+/**
+ * Validar si hay parametros de paginacion
+ */
+$startAt = 0;
+ if(isset($urlParams[1]))
+ {
+    if(is_numeric($urlParams[1]))
+    {
+        $startAt = ($urlParams[1] * 6) - 6;
+    }else
+    {
+        echo "<script> window.location = {$path}{$urlParams[0]} </script>";
+        echo $path . $urlParams[0];
+    }
+ }
+
+
 /**
  * Productos mas nuevos segun categoria y tienda
  */
 $urlShowProducts = CurlController::api() .
-    "relations?rel=products,categories,stores&type=product,category,store&linkTo=url_category&equalTo=" . $urlParams[0] . "&orderBy=id_product&orderMode=DESC&startAt=0&endAt=12";
+    "relations?rel=products,categories,stores&type=product,category,store&linkTo=url_category&equalTo=" . 
+    $urlParams[0] . "&orderBy=id_product&orderMode=DESC&startAt={$startAt}&endAt=6";
 
 $dataShowProducts = CurlController::request(
     $urlShowProducts,
@@ -18,7 +37,7 @@ if ($dataShowProducts == 'Not Found') {
      * Productos mas nuevos segun subcategoria y tienda
      */
     $urlShowProducts = CurlController::api() .
-        "relations?rel=products,categories,subcategories,stores&type=product,category,subcategory,store&linkTo=url_subcategory&equalTo=" . $urlParams[0] . "&orderBy=id_product&orderMode=DESC&startAt=0&endAt=12";
+        "relations?rel=products,categories,subcategories,stores&type=product,category,subcategory,store&linkTo=url_subcategory&equalTo=" . $urlParams[0] . "&orderBy=id_product&orderMode=DESC&startAt={$startAt}&endAt=6";
 
     $dataShowProducts = CurlController::request(
         $urlShowProducts,
@@ -34,7 +53,9 @@ if ($dataShowProducts == 'Not Found') {
 //----------------------------------------------------------------
 
 $urlShowProductsBestSales = CurlController::api() .
-    "relations?rel=products,categories,stores&type=product,category,store&linkTo=url_category&equalTo=" . $urlParams[0] . "&orderBy=sales_product&orderMode=DESC&startAt=0&endAt=12";
+    "relations?rel=products,categories,stores&type=product,category,store&linkTo=url_category&equalTo=" . 
+    $urlParams[0] . 
+    "&orderBy=sales_product&orderMode=DESC&startAt={$startAt}&endAt=6";
 
 $dataShowProductsBestSales = CurlController::request(
     $urlShowProductsBestSales,
@@ -48,7 +69,9 @@ if ($dataShowProductsBestSales == 'Not Found') {
      * Productos mas nuevos segun subcategoria y tienda
      */
     $urlShowProductsBestSales = CurlController::api() .
-        "relations?rel=products,categories,subcategories,stores&type=product,category,subcategory,store&linkTo=url_subcategory&equalTo=" . $urlParams[0] . "&orderBy=sales_product&orderMode=DESC&startAt=0&endAt=12";
+        "relations?rel=products,categories,subcategories,stores&type=product,category,subcategory,store&linkTo=url_subcategory&equalTo=" . 
+        $urlParams[0] . 
+        "&orderBy=sales_product&orderMode=DESC&startAt={$startAt}&endAt=6";
 
         $rs = CurlController::request(
             $urlShowProductsBestSales,
@@ -76,7 +99,9 @@ if($dataShowProductsBestSales == 'Not Found')
 //----------------------------------------------------------------
 
 $urlShowProductsRecommended = CurlController::api() .
-    "relations?rel=products,categories,stores&type=product,category,store&linkTo=url_category&equalTo=" . $urlParams[0] . "&orderBy=views_product&orderMode=DESC&startAt=0&endAt=12";
+    "relations?rel=products,categories,stores&type=product,category,store&linkTo=url_category&equalTo=" . 
+    $urlParams[0] . 
+    "&orderBy=views_product&orderMode=DESC&startAt={$startAt}&endAt=6";
 
 $dataShowProductsRecommended = CurlController::request(
     $urlShowProductsRecommended,
@@ -90,7 +115,9 @@ if ($dataShowProductsRecommended == 'Not Found') {
      * Productos mas nuevos segun subcategoria y tienda
      */
     $urlShowProductsRecommended = CurlController::api() .
-        "relations?rel=products,categories,subcategories,stores&type=product,category,subcategory,store&linkTo=url_subcategory&equalTo=" . $urlParams[0] . "&orderBy=views_product&orderMode=DESC&startAt=0&endAt=12";
+        "relations?rel=products,categories,subcategories,stores&type=product,category,subcategory,store&linkTo=url_subcategory&equalTo=" . 
+        $urlParams[0] . 
+        "&orderBy=views_product&orderMode=DESC&startAt=0&endAt=6";
 
     $dataShowProductsRecommended = CurlController::request(
         $urlShowProductsRecommended,
@@ -110,7 +137,9 @@ if($dataShowProductsRecommended == 'Not Found')
 //----------------------------------------------------------------
 
 $urlShowProductsCategoryOrSubcategory = CurlController::api() .
-    "relations?rel=products,categories,stores&type=product,category,store&linkTo=url_category&equalTo=" . $urlParams[0];
+    "relations?rel=products,categories,stores&type=product,category,store&linkTo=url_category&equalTo=" . 
+    $urlParams[0] . 
+    "&orderBy=views_product&orderMode=DESC&startAt={$startAt}&endAt=12";
 
 $dataShowProductsCategoryOrSubcategory = CurlController::request(
     $urlShowProductsCategoryOrSubcategory,
@@ -128,7 +157,9 @@ if ($dataShowProductsCategoryOrSubcategory == 'Not Found') {
      * Productos mas nuevos segun subcategoria y tienda
      */
     $urlShowProductsCategoryOrSubcategory = CurlController::api() .
-        "relations?rel=products,categories,subcategories,stores&type=product,category,subcategory,store&linkTo=url_subcategory&equalTo=" . $urlParams[0];
+        "relations?rel=products,categories,subcategories,stores&type=product,category,subcategory,store&linkTo=url_subcategory&equalTo=" . 
+        $urlParams[0] . 
+        "&orderBy=views_product&orderMode=DESC&startAt={$startAt}&endAt=12";
 
     $dataShowProductsCategoryOrSubcategory = CurlController::request(
         $urlShowProductsCategoryOrSubcategory,

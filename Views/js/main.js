@@ -744,14 +744,18 @@
 
                 }).on("page", function(evt, page){
 
+                    console.log(page);
                     if(urlPage.includes("&",1)){
 
                         urlPage = urlPage.replace("&"+currentPage, "&"+page);
-                        window.location = urlPage+"#showcase";
+                        window.location = urlPage;
+                        console.log(urlPage);
+                        // window.location = urlPage+"#showcase";
 
                     }else{
 
-                        window.location = urlPage+"&"+page+"#showcase";
+                        window.location = urlPage+"&"+page;
+                        // window.location = urlPage+"&"+page+"#showcase";
                     }    
 
                 })
@@ -1104,7 +1108,9 @@
 
         }
 
+    
     }
+
 
     /*=============================================
     Ejecutar funciones globales
@@ -1138,6 +1144,7 @@
         carouselNavigation();
         dateTimePicker();
         $('[data-toggle="tooltip"]').tooltip();
+        // ------------------------
         pagination();
         preload();
         validateBS4();
@@ -1146,6 +1153,7 @@
         summer();
         editSummer();
         share();
+        // ------------------------
     });
 
     $(window).on('load', function() {

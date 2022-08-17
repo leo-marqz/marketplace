@@ -228,12 +228,26 @@
             </div>
 
             <div class="ps-pagination">
+                <?php
+                    if(isset($urlParams[1]))
+                    {
+                        $currentPage = $urlParams[1];
+                    }else{
+                        $currentPage = 1;
+                    }
+                
+                ?>
 
-                <ul class="pagination">
-                    <li class="active"><a href="#">1</a></li>
+                <ul 
+                    class="pagination" 
+                    data-total-pages="<?php echo ceil($total/6); ?>"
+                    data-current-page="<?=$currentPage?>"
+                    data-url-page="<?=$_SERVER['REQUEST_URI']?>"
+                >
+                    <!-- <li class="active"><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
-                    <li><a href="#">Next Page<i class="icon-chevron-right"></i></a></li>
+                    <li><a href="#">Next Page<i class="icon-chevron-right"></i></a></li> -->
                 </ul>
 
             </div>
@@ -360,12 +374,17 @@
 
             <div class="ps-pagination">
 
-                <ul class="pagination">
+                <ul 
+                    class="pagination" 
+                    data-total-pages="<?php echo ceil($total/6); ?>"
+                    data-current-page="<?=$currentPage?>"
+                    data-url-page="<?=$_SERVER['REQUEST_URI']?>"
+                >
 
-                    <li class="active"><a href="#">1</a></li>
+                    <!-- <li class="active"><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
-                    <li><a href="#">Next Page<i class="icon-chevron-right"></i></a></li>
+                    <li><a href="#">Next Page<i class="icon-chevron-right"></i></a></li> -->
 
                 </ul>
 
